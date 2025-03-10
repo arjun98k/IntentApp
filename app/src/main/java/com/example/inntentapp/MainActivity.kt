@@ -20,10 +20,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         val btn = findViewById<Button>(R.id.btn)
-        btn.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            startActivity(intent)
+        val intent = Intent(this, MainActivity2::class.java).apply {
+            putExtra("title", "Home")
+            putExtra("StudentName", "Raman")
+            putExtra("Roll No", 20)
         }
 
+        btn.setOnClickListener {
+            startActivity(intent)
+        }
     }
 }
